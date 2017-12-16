@@ -1,0 +1,10 @@
+<section class="flex">
+   <?php foreach ($kittens as $kitten) : ?>
+        <article>
+            <img src="www/img/<?= $kitten['image']['image_url']?>" alt="<?= $kitten['image']['alt_img'] ?> "/>
+            <h2><?= $kitten['title'] ?></h2>
+            <?= $kitten['presentation'] ?>
+        </article>
+    <?php endforeach ?>
+
+</section>

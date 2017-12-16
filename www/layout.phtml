@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Sacré de Birmanie 40</title>
+        <meta charset="UTF-8">
+
+        <link href="https://fonts.googleapis.com/css?family=Delius+Swash+Caps" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+        <link rel="stylesheet" href="www/css/normalize-3.0.3.min.css">
+        <link rel="stylesheet" href="www/css/flexslider.css">
+        <link rel="stylesheet" href="www/css/style.css">
+
+        <script src="www/js/jquery-3.2.1.min.js"></script>
+        <script src="www/js/jquery.flexslider-min.js"></script>
+
+        <script src="www/js/script.js"></script>
+
+    </head>
+
+    <body>
+        <header id="header">
+            <section class="flex">
+                <a href="index.php" title="accueuil"><img src="www/img/little-cat-vector.svg"/></a>
+                <h1>Chatterie du Chemin secret</h1>
+            </section>
+
+            <nav class="flex">
+                <a href="index.php" title="La page d'accueil"><i class="fa fa-home"></i> Home</a>
+                <div>
+                    <a href="#" title="Les chats de la famille">Les chats de la maison</a><!-- supprimer le a-->
+                    <ul class="hidden">
+                        <li><a href="index.php?page=cat&categorie=femelles" title="Les mères de nos chatons"><i class="fa fa-paw"></i> Femelles</a></li>
+                        <li><a href="index.php?page=cat&categorie=males" title="Les pères de nos chatons"><i class="fa fa-paw"></i> Mâles</a></li>
+                        <li><a href="index.php?page=cat&categorie=retraités" title="Nos retraités bien aimés"><i class="fa fa-paw"></i> Retraités</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <a href="#" title="nos adorables chatons">Nos chatons</a><!-- supprimer le a-->
+                    <ul class="hidden">
+                        <li><a href="index.php?page=kitten&categorie=disponibles" title="Nos chatons disponibles"><i class="fa fa-paw"></i> A adopter</a></li>
+                        <li><a href="index.php?page=kitten&categorie=adoptés" title="Nés chez nous chatons"><i class="fa fa-paw"></i> Déjà adoptés</a></li>
+                        <li><a href="index.php?page=condition" title="Nos conditions d'adoption"><i class="fa fa-paw"></i> Nos conditions</a></li>
+                    </ul>
+                </div>
+
+                <a href="index.php?page=goldenBook" title="Vos petits mots"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Vos petits mots</a>
+                <a href="index.php?page=news" title="Les dernières toutes fraîches"><i class="fa fa-heartbeat"></i> News</a>
+                <a href="index.php?page=contact" title="Nous contacter"><i class="fa fa-envelope"></i> Contacts</a>
+
+            </nav>
+
+        </header>
+
+        <main class="container">
+
+            <!-- inclusion du template <?= $page ?>.phtml -->
+            <?php include $page.".phtml"; ?>
+            <!-- fin du template <?= $page ?>.phtml-->
+
+        </main>
+
+        <footer class="flex">
+            <nav class="flex column">
+                <?php if (!$isLogged) : ?>
+                    <a href="index.php?page=register" title="inscrivez-vouz"><i class="fa fa-users"></i> Inscription</a>
+                    <a href="index.php?page=login" title="connectez-vouz"><i class="fa fa-user"></i> Connexion</a>
+                <?php else: ?>
+                    <a href="index.php?page=logout" title="déconnectez-vouz"><i class="fa fa-user"></i> Déconnexion</a>
+                <?php endif ?>
+            </nav>
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="340" height="130" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+<section class="flex">
+    <article class="flex column">
+        <?php foreach ($imagesInfo as $image): ?>
+            <img src="www/img/<?= $image['image_url']?>" alt="<?= $image['alt_img'] ?> "/>
+        <?php endforeach ?>
+    </article>
+    <article>
+        <h2><?= $news['title'] ?></h2>
+        <?= $news['presentation'] ?>
+    </article>
+</section>
+

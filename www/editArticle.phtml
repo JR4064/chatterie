@@ -1,0 +1,28 @@
+<?php if(array_key_exists('action', $_GET)) : ?>
+    <h1>Edition / Ajout d'un article</h1>
+    <?php if(!empty($message)): ?>
+        <p class="error"><?=$message ?></p>
+    <?php endif ?>
+    <form method="post">
+        <input type="hidden" name="id" value="<?= $id ?>">
+        <ul>
+            <li><input type="text" name="title" value="<?= $title ?>" placeholder="titre"></li>
+            <li><textarea name="presentation"  rows="20"  placeholder="Contenu"><?= $content ?></textarea></li>
+
+
+            <li>
+                <select id="category_id" name="category_id" >
+                    <?php foreach ($categories as $categorie): ?>
+                        <?php $selected = ($categorie['id'] == $category_id) ? 'selected' : ''; ?>
+                        <option value="<?= $categorie['id'] ?>" <?=$selected?> ><?= $categorie['category_name'] ?></option>
+                    <?php endforeach; ?>
+
+                </select>
+            </li>
+            <li><input type="submit" name="save_article" value="enregistrer"></li>
+        </ul>
+    </form>
+
+<?php else : ?>
+    <p>vous n'avez rien à faire ici</p>
+<?php endif ?>

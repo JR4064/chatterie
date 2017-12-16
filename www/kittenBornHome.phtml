@@ -1,0 +1,13 @@
+<section>
+
+    <article class="flexslider">
+        <ul class="slides">
+            <?php foreach ($imagesInfo as $image): ?>
+                <li>
+                    <img src="www/img/<?= $image['image_url']?>" alt="<?= $image['alt_img'] ?> "/>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    </article>
+
+</section>
